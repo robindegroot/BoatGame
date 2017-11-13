@@ -7,7 +7,7 @@ public class BoatPhysics : MonoBehaviour {
     private ModifyBoatMesh modifyBoatMesh;
     private Mesh underWaterMesh;
     private Rigidbody boat;
-    private float rhoWater = 1027f;
+    private float rhoWater = 480f;
 	
 	void Start ()
     {
@@ -56,7 +56,6 @@ public class BoatPhysics : MonoBehaviour {
         // n - normal to the surface
         Vector3 buoyancyForce = rho * Physics.gravity.y * triangleData.distanceToSurface * triangleData.area * triangleData.normal;
 
-        //The vertical component of the hydrostatic forces don't cancel out but the horizontal do
         buoyancyForce.x = 0f;
         buoyancyForce.z = 0f;
 
